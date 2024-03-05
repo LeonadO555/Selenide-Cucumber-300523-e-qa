@@ -22,5 +22,4 @@ public class LoginSteps extends BaseSteps {
     public void iAmOnTheProductsPage() {
     }
 
-
 }

@@ -1,7 +1,10 @@
 package steps;
 
+
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 
 public class MySteps extends BaseSteps {
     @When("^Login as user \"([^\"]*)\"$")
@@ -12,5 +15,27 @@ public class MySteps extends BaseSteps {
     @And("password \"([^\"]*)\"$")
     public void password(String password) {
         loginPage.setInput(loginPage.passwordInput,password);
+    }
+
+    @And("^click to login button$")
+    public void clickToLoginButton() {
+        loginPage.click(loginPage.loginButton);
+    }
+
+    @And("^I am on the Products page$")
+    public void iAmOnTheProductsPage() {
+        productsPage.waitForVisibility();
+    }
+
+    @And("^I choose a product$")
+    public void iChooseAProduct(){
+        productsPage.click(productsPage.addProduct);
+    }
+
+    @Then("^I click to shopping button$")
+    public void openCartPage(){
+        productsPage.openCartPage();
+
+
     }
 }

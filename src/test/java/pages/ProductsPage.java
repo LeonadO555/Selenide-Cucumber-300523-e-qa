@@ -10,6 +10,7 @@ public class ProductsPage extends BasePage{
     public void waitForVisibility(){
         header.burgerButton.shouldBe(visible);
         header.cartButton.shouldBe(visible);
+
     }
         public final SelenideElement loginInput = $x("//*[@id='user-name']");
         public final SelenideElement passwordInput = $x("//*[@id='password']");
@@ -17,4 +18,6 @@ public class ProductsPage extends BasePage{
         public final SelenideElement loginCredentials = $("[id='login_credentials']");
         public final SelenideElement loginPassword = $x("//*[@class='login_password']");
         public final SelenideElement errorMessage = $x("//*[@data-test='error']");
-    }
+        public final SelenideElement addProduct =$x("//*[@id='add-to-cart-sauce-labs-backpack']");
+
+}

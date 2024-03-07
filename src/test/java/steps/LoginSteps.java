@@ -4,6 +4,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import static com.codeborne.selenide.Condition.text;
+
+
 public class LoginSteps extends BaseSteps {
     @When("^I fill username \"([^\"]*)\"$")
     public void iFillUsername(String username) {
@@ -11,7 +14,7 @@ public class LoginSteps extends BaseSteps {
     }
     @And("^I fill password \"([^\"]*)\"$")
     public void iFillPassword(String password) {
-        loginPage.setInput(loginPage.loginPassword, password);
+        loginPage.setInput(loginPage.passwordInput, password);
     }
     @And("^I click to login button$")
     public void iClickToLoginButton() {
@@ -22,4 +25,8 @@ public class LoginSteps extends BaseSteps {
         productsPage.waitForVisibility();
     }
 
+    @Then("^I am get error message with text \"([^\"]*)\"$")
+    public void iAmGetErrorMessageWithText(String expectedErrorMessage) {
+        loginPage.errorMessage.shouldHave(text(expectedErrorMessage));
+    }
 }

@@ -6,6 +6,7 @@ import enums.SidebarOptions;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 
 
 public class BasePage {
@@ -50,12 +51,12 @@ public class BasePage {
     }
 
     public class Header{
-        SelenideElement cartButton = $("//*[@class='shopping_cart_link']");
-        SelenideElement burgerButton = $("//*[@id='react-burger-menu-btn']");
+        SelenideElement cartButton = $x("//*[@class='shopping_cart_link']");
+        SelenideElement burgerButton = $x("//*[@id='react-burger-menu-btn']");
     }
 
     class Sidebar{
-        SelenideElement sidebar = $("//*[class='bm-item-list']");
-        SelenideElement closeButton = $("//*[@id='react-burger-cross-btn']");
+        SelenideElement sidebar = $x("//*[@class='bm-item-list']");
+        SelenideElement closeButton = $x("//*[@id='react-burger-cross-btn']");
     }
 }

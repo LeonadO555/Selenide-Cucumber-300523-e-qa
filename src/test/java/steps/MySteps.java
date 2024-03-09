@@ -22,11 +22,6 @@ public class MySteps extends BaseSteps {
         loginPage.click(loginPage.loginButton);
     }
 
-    @And("^I am on the Products page$")
-    public void iAmOnTheProductsPage() {
-        productsPage.waitForVisibility();
-    }
-
     @And("^I choose a product$")
     public void iChooseAProduct(){
         productsPage.click(productsPage.addProduct);
@@ -37,5 +32,10 @@ public class MySteps extends BaseSteps {
         productsPage.openCartPage();
 
 
+    }
+
+    @And("^I remote product$")
+    public void iRemoteProduct() {
+        productsPage.remoteProduct();
     }
 }

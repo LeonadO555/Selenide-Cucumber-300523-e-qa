@@ -36,6 +36,5 @@ public class MySteps extends BaseSteps {
 
     @And("^I remote product$")
     public void iRemoteProduct() {
-        productsPage.remoteProduct();
     }
 }

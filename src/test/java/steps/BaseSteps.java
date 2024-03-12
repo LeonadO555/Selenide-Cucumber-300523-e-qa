@@ -7,4 +7,5 @@ public class BaseSteps {
     LoginPage loginPage = new LoginPage();
 
     ProductsPage productsPage  = new ProductsPage();
+
 }

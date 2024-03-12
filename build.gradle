@@ -31,8 +31,8 @@ dependencies {
 
 test {
     useJUnitPlatform()
-    //include '**/RunnerLoginTest.class'
-    //testLoggin {
-    //    events "passed", "skipped", "failed"
-    //}
+    include '**/RunnerLoginTest.class'
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }

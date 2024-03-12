@@ -15,10 +15,11 @@ Feature: Login
     Then I am get error message with text "<errorMessage>"
     Examples:
     | username | password | errorMessage | testCase |
-    | standard_error | blablabal |  Epic sadface: Username and password do not match any user in this service|
-    | locked_out_user | secret_sauce | Epic sadface: Sorry, this user has been locked out                     |
-    | standard_user   | bla1231123   | Epic sadface: Username and password do not match any user in this service   |
-    | blablabla       | secret_sauce  | Epic sadface: Username and password do not match any user in this service   |
+    | username        | password     | errorMessage | testCase                 |
+    | standard_error  | blablabla    | Epic sadface: Username and password do not match any user in this service | with invalid credentials |
+    | locked_out_user | secret_sauce | Epic sadface: Sorry, this user has been locked out.    | with locked_out_user     |
+    | standard_user   | atatata  | Epic sadface: Username and password do not match any user in this service    | with invalid password    |
+    | blablabla       | secret_sauce | Epic sadface: Username and password do not match any user in this service  | with invalid username    |
 
 
 
